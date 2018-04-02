@@ -41,11 +41,12 @@ public class Triangle extends Shape {
         this.side3 = side3;
     }
     public double getPerimeter(){
-        return this.side1 + this.side2 + this.side3;
+        return (this.side1 + this.side2 + this.side3)/2;
     }
     public double getArea(){
         double perimeter = getPerimeter();
-        return Math.sqrt(perimeter*(perimeter-this.side1)*(perimeter-this.side2)*(perimeter-this.side3));
+        double p = (perimeter - this.side1) * (perimeter - this.side2) * (perimeter - this.side3);
+        return Math.sqrt(perimeter * p);
     }
 
     @Override
